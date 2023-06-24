@@ -2,9 +2,11 @@ function ExpenseItems() {
     return(
         <div>
             <h1>Expense Items</h1>
-            <p>Food Rs 10</p>
-            <p>Petrol Rs 100</p>
-            <p>Movies Rs 200</p>
+            <div>
+            <h2>Food <span>Rs 10</span></h2>
+            <h2>Petrol <span>Rs 100</span></h2>
+            <h2>Movies <span>Rs 200</span></h2>
+            </div>
         </div>
     );
 }
