@@ -1,13 +1,16 @@
+import "./ExpenseItems.css";
 function ExpenseItems() {
-    return(
-        <div>
-            <h1>Expense Items</h1>
-            <div>
-            <h2>Food <span>Rs 10</span></h2>
-            <h2>Petrol <span>Rs 100</span></h2>
-            <h2>Movies <span>Rs 200</span></h2>
-            </div>
-        </div>
-    );
+  const ExpenseDate = new Date(2023, 6, 24);
+  const ExpenseName = "Food";
+  const ExpensePrice = 10;
+  return (
+    <div className="expense-item">
+      <div>{ExpenseDate.toISOString()}</div>
+      <div className="expense-item__description">
+        <h2>{ExpenseName}</h2>
+        <div className="expense-item__price">Rs{ExpensePrice}</div>
+      </div>
+    </div>
+  );
 }
 export default ExpenseItems;
