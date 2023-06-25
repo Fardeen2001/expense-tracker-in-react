@@ -5,7 +5,11 @@ function ExpenseItems(props) {
   return (
     <div className="expense-item">
       <ExpenseDate ExpenseDate={props.ExpenseDate} />
-      <ExpenseDetails ExpenseDetails={props.ExpenseDetails} />
+      <ExpenseDetails
+        ExpenseName={props.ExpenseName}
+        ExpensePrice={props.ExpensePrice}
+        LocationOfExpenditure={props.LocationOfExpenditure}
+      />
     </div>
   );
 }
