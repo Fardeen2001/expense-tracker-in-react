@@ -1,16 +1,19 @@
 import ExpenseDate from "./ExpenseDate";
+import Card from "./card";
 import ExpenseDetails from "./ExpenseDetails";
 import "./ExpenseItems.css";
-function ExpenseItems(props) {
+
+function ExpenseItem(props) {
   return (
-    <div className="expense-item">
-      <ExpenseDate ExpenseDate={props.ExpenseDate} />
+    <Card className="expense-item">
+      <ExpenseDate date={props.date} />
       <ExpenseDetails
-        ExpenseName={props.ExpenseName}
-        ExpensePrice={props.ExpensePrice}
-        LocationOfExpenditure={props.LocationOfExpenditure}
+        title={props.title}
+        amount={props.amount}
+        location={props.location}
       />
-    </div>
+    </Card>
   );
 }
-export default ExpenseItems;
+
+export default ExpenseItem;

@@ -1,70 +1,41 @@
-import ExpenseItems from "./components/ExpenseItems";
+import Expenses from "./components/Expenses";
 
 function App() {
-  let Expenses = [
+  const expenses = [
     {
-      ExpenseName: "Petrol",
-      ExpensePrice: 100,
-      ExpenseDate: new Date(),
-      LocationOfExpenditure: "Tumkur",
+      id: "e1",
+      title: "Toilet Paper",
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+      location: "tumkur",
     },
     {
-      ExpenseName: "Food",
-      ExpensePrice: 200,
-      ExpenseDate: new Date(),
-      LocationOfExpenditure: "Tumkur",
+      id: "e2",
+      title: "New TV",
+      amount: 799.49,
+      date: new Date(2021, 2, 12),
+      location: "tumkur",
     },
     {
-      ExpenseName: "Birthday party",
-      ExpensePrice: 1000,
-      ExpenseDate: new Date(),
-      LocationOfExpenditure: "Tumkur",
+      id: "e3",
+      title: "Car Insurance",
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+      location: "tumkur",
     },
     {
-      ExpenseName: "Petrol",
-      ExpensePrice: 100,
-      ExpenseDate: new Date(2023, 5, 25),
-      LocationOfExpenditure: "Tumkur",
-    },
-    {
-      ExpenseName: "Lost",
-      ExpensePrice: 100,
-      ExpenseDate: new Date(2023, 5, 25),
-      LocationOfExpenditure: "Tumkur",
+      id: "e4",
+      title: "New Desk (Wooden)",
+      amount: 450,
+      date: new Date(2021, 5, 12),
+      location: "tumkur",
     },
   ];
+
   return (
     <div>
-      <h2>Expense Tracker</h2>
-      {Expenses.map((ExpenseList, index) => {
-        return (
-          <ExpenseItems
-            ExpenseName={ExpenseList.ExpenseName}
-            ExpensePrice={ExpenseList.ExpensePrice}
-            ExpenseDate={ExpenseList.ExpenseDate}
-            LocationOfExpenditure={ExpenseList.LocationOfExpenditure}
-          />
-        );
-      })}
-      ;
-      {/* <ExpenseItems
-        ExpenseName={Expenses[1].ExpenseName}
-        ExpensePrice={Expenses[1].ExpensePrice}
-        ExpenseDate={Expenses[1].ExpenseDate}
-        LocationOfExpenditure={Expenses[1].LocationOfExpenditure}
-      />
-      <ExpenseItems
-        ExpenseName={Expenses[2].ExpenseName}
-        ExpensePrice={Expenses[2].ExpensePrice}
-        ExpenseDate={Expenses[2].ExpenseDate}
-        LocationOfExpenditure={Expenses[2].LocationOfExpenditure}
-      />
-      <ExpenseItems
-        ExpenseName={Expenses[3].ExpenseName}
-        ExpensePrice={Expenses[3].ExpensePrice}
-        ExpenseDate={Expenses[3].ExpenseDate}
-        LocationOfExpenditure={Expenses[3].LocationOfExpenditure}
-      /> */}
+      <h2>Let's get started!</h2>
+      <Expenses items={expenses} />
     </div>
   );
 }
