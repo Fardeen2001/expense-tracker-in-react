@@ -1,5 +1,5 @@
 import ExpenseItem from "./ExpenseItems";
-import Card from "./card";
+import Card from "../UI/card";
 import "./Expenses.css";
 
 function Expenses(props) {
@@ -13,6 +13,7 @@ function Expenses(props) {
           location={item.location}
         />
       ))}
+
       {/* <ExpenseItem
         title={props.items[1].title}
         amount={props.items[1].amount}
