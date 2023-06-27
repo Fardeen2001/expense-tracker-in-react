@@ -9,17 +9,38 @@ function ExpenseForm() {
   const dateChanged = (e) => {
     console.log(e.target.value);
   };
-  const clicked = () => {
+  const clicked = (e) => {
+    e.preventDefault();
     console.log("clicked");
   };
 
   return (
-    <div className="form">
-      <input type="text" onChange={titleChanged} />
-      <input type="number" onChange={priceChanged} />
-      <input type="date" onChange={dateChanged} />
-      <button onClick={clicked}>Submit</button>
-    </div>
+    <form>
+      <div className="new-expense__controls">
+        <div className="new-expense__control">
+          <label>Title</label>
+          <input type="text" onChange={titleChanged} />
+        </div>
+        <div className="new-expense__control">
+          <label>Amount</label>
+          <input type="number" min="0.01" step="0.01" onChange={priceChanged} />
+        </div>
+        <div className="new-expense__control">
+          <label>Date</label>
+          <input
+            type="date"
+            min="2020-01-01"
+            max="2024-12-31"
+            onChange={dateChanged}
+          />
+        </div>
+      </div>
+      <div className="new-expense__actions">
+        <button type="submit" onClick={clicked}>
+          Add Expense
+        </button>
+      </div>
+    </form>
   );
 }
 export default ExpenseForm;
