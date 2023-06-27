@@ -1,17 +1,24 @@
+import React, { useState } from "react";
 import "./ExpenseForm.css";
-function ExpenseForm() {
+function ExpenseForm(props) {
+  const [enteredTitle, updatedTitle] = useState(props.title);
+  const [enteredAmount, updatedAmount] = useState(props.amount);
+  const [enteredDate, updatedDate] = useState(props.date);
   const titleChanged = (e) => {
-    console.log(e.target.value);
+    updatedTitle(e.target.value);
+    //console.log(e.target.value);
   };
   const priceChanged = (e) => {
-    console.log(e.target.value);
+    updatedAmount(e.target.value);
+    //console.log(e.target.value);
   };
   const dateChanged = (e) => {
-    console.log(e.target.value);
+    updatedDate(e.target.value);
+    //console.log(e.target.value);
   };
   const clicked = (e) => {
     e.preventDefault();
-    console.log("clicked");
+    //console.log("clicked");
   };
 
   return (
