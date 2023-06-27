@@ -4,6 +4,12 @@ import ExpenseDetails from "./ExpenseDetails";
 import "./ExpenseItems.css";
 
 const ExpenseItem = (props) => {
+  const EditHandler = ()=>{
+    console.log("EditClicked")
+  }
+  const DeleteHandler = ()=>{
+    console.log("DeleteClicked")
+  }
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
@@ -12,6 +18,8 @@ const ExpenseItem = (props) => {
         amount={props.amount}
         location={props.location}
       />
+      <button onClick={EditHandler}>Edit</button>
+      <button onClick={DeleteHandler}>Delete</button>
     </Card>
   );
 };
