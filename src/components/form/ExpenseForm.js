@@ -1,23 +1,46 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-function ExpenseForm(props) {
-  const [enteredTitle, updatedTitle] = useState(props.title);
-  const [enteredAmount, updatedAmount] = useState(props.amount);
-  const [enteredDate, updatedDate] = useState(props.date);
+function ExpenseForm() {
+  const [enteredTitle, updatedTitle] = useState("");
+  const [enteredAmount, updatedAmount] = useState("");
+  const [enteredDate, updatedDate] = useState("");
+  // const [inputUser, setInputUser] = useState({
+  //   title: "",
+  //   amount: "",
+  //   date: "",
+  // });
   const titleChanged = (e) => {
+    // setInputUser({
+    //   ...inputUser,
+    //   title: e.target.value,
+    // });
     updatedTitle(e.target.value);
     //console.log(e.target.value);
   };
   const priceChanged = (e) => {
+    // setInputUser({
+    //   ...inputUser,
+    //   amount: e.target.value,
+    // });
     updatedAmount(e.target.value);
     //console.log(e.target.value);
   };
   const dateChanged = (e) => {
+    // setInputUser({
+    //   ...inputUser,
+    //   date: e.target.value,
+    // });
     updatedDate(e.target.value);
     //console.log(e.target.value);
   };
   const clicked = (e) => {
     e.preventDefault();
+    let obj = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: enteredDate,
+    };
+    console.log(obj);
     //console.log("clicked");
   };
 
