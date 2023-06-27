@@ -1,23 +1,24 @@
+import React, { useState } from "react";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/card";
 import ExpenseDetails from "./ExpenseDetails";
 import "./ExpenseItems.css";
 
 const ExpenseItem = (props) => {
-  const EditHandler = ()=>{
-    console.log("EditClicked")
-  }
-  const DeleteHandler = ()=>{
-    console.log("DeleteClicked")
-  }
+  const [title, setTitle] = useState(props.title);
+  const [price, setPrice] = useState(props.amount);
+  const EditHandler = () => {
+    setTitle("updated");
+    setPrice(100);
+    console.log(title);
+  };
+  const DeleteHandler = () => {
+    //console.log("DeleteClicked")
+  };
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
-      <ExpenseDetails
-        title={props.title}
-        amount={props.amount}
-        location={props.location}
-      />
+      <ExpenseDetails title={title} amount={price} location={props.location} />
       <button onClick={EditHandler}>Edit</button>
       <button onClick={DeleteHandler}>Delete</button>
     </Card>
