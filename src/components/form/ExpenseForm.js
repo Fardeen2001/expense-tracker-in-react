@@ -35,17 +35,17 @@ function ExpenseForm() {
   };
   const clicked = (e) => {
     e.preventDefault();
-    let obj = {
+    let userInput = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: enteredDate,
+      date: new Date(enteredDate),
     };
-    console.log(obj);
+    console.log(userInput);
     //console.log("clicked");
   };
 
   return (
-    <form>
+    <form onSubmit={clicked}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -66,9 +66,7 @@ function ExpenseForm() {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit" onClick={clicked}>
-          Add Expense
-        </button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );
