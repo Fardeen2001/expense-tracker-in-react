@@ -48,9 +48,23 @@ const App = () => {
   //     )
   //   )
   // );
+  const addExpenseHandler = (expense) => {
+    // const newExpenseArr = [
+    //   ...expenses,
+    //   {
+    //     id: expense.id,
+    //     title: expense.title,
+    //     amount: expense.amount,
+    //     date: new Date(expense.date),
+    //     location: expense.location,
+    //   },
+    // ];
+    // return newExpenseArr
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
