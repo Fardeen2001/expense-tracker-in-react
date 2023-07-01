@@ -10,7 +10,7 @@ const ExpenseItem = (props) => {
   const EditHandler = () => {
     setTitle("updated");
     setPrice(100);
-    console.log(title);
+    // console.log(title);
   };
   const DeleteHandler = () => {
     //console.log("DeleteClicked")

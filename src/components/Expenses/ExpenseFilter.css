@@ -1,0 +1,12 @@
+.filteraction {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.filterControls select {
+  padding: 0.5rem;
+}
+
+.filterControls label {
+  color: #ffffff;
+}
