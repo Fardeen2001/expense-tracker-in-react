@@ -6,8 +6,8 @@ export default function ExpenseFilter(props) {
     props.onChangeHandler(e.target.value);
   };
   return (
-    <div className="filterControls">
-      <div className="filteraction">
+    <div className="expenses-filter">
+      <div className="expenses-filter__control">
         <label>Filter by year</label>
         <select value={props.selected} onChange={dropDownChangeHandler}>
           <option value="2020">2020</option>
