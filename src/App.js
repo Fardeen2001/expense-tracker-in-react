@@ -1,38 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/form/NewExpense";
-
+const Dummyexpenses = [
+  {
+    id: "e1",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+    location: "tumkur",
+  },
+  {
+    id: "e2",
+    title: "New TV",
+    amount: 799.49,
+    date: new Date(2021, 2, 12),
+    location: "tumkur",
+  },
+  {
+    id: "e3",
+    title: "Car Insurance",
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
+    location: "tumkur",
+  },
+  {
+    id: "e4",
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
+    location: "tumkur",
+  },
+];
 const App = () => {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-      location: "tumkur",
-    },
-    {
-      id: "e2",
-      title: "New TV",
-      amount: 799.49,
-      date: new Date(2021, 2, 12),
-      location: "tumkur",
-    },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-      location: "tumkur",
-    },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2021, 5, 12),
-      location: "tumkur",
-    },
-  ];
+  const [expenses, setExpenses] = useState(Dummyexpenses);
   // return React.createElement(
   //   "div",
   //   { className: expense - items },
@@ -49,17 +49,9 @@ const App = () => {
   //   )
   // );
   const addExpenseHandler = (expense) => {
-    // const newExpenseArr = [
-    //   ...expenses,
-    //   {
-    //     id: expense.id,
-    //     title: expense.title,
-    //     amount: expense.amount,
-    //     date: new Date(expense.date),
-    //     location: expense.location,
-    //   },
-    // ];
-    // return newExpenseArr
+    setExpenses((prevExpense) => {
+      return [expense, ...prevExpense];
+    });
   };
 
   return (
